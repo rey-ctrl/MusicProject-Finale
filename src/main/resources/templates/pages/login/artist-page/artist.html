@@ -1,0 +1,203 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <meta name="description"
+    content="Create our Artist biography" />
+    <script type="module" src="/src/main/resources/templates/bloatware.js"></script>
+    <link rel="stylesheet" href="/src/main/resources/templates/output.css">
+    <script src="https://cdn.tailwindcss.com/config/defaultConfig.stub.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" href="/src/main/resources/templates/assets/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <style>
+      .btn {
+          /* Lebar tetap untuk tombol */
+          width: 100px;
+          /* Tinggi tetap untuk tombol */
+          height: 40px;
+      }
+
+      /* Style tambahan untuk saat tombol aktif */
+      .list.active {
+          /* Ganti warna latar belakang dan teks saat tombol aktif */
+          background-color: #20447b;
+          /* Warna latar belakang */
+          color: white;
+          /* Warna teks */
+      }
+
+      /* Style tambahan untuk saat tombol yang aktif di hover */
+      .list.active:hover {
+          background-color: #113560;
+      }
+
+      /* Focus effect */
+      .list:focus {
+          /* Ganti warna cincin saat fokus */
+          outline: none;
+          /* Hilangkan outline default */
+          box-shadow: 0 0 0 3px rgba(53, 177, 79, 0.5);
+          /* Tambahkan cincin dengan warna hijau */
+      }
+  </style>
+
+  </head>
+  <body class="bg-white dark:bg-gray-800">
+
+    <!-- NAVBAR STARTS  -->
+    <nav class="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <div class="nav-text">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Music</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-500 text-blue-500 light:text-blue-500">Project</span>
+            </div>   
+        </a>
+        <a href="#" class="flex items-right"> 
+        <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        
+        <div class="hidden w-full" id="navbar-hamburger">
+            <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-800 dark:border-gray-700">
+            <li>
+                <a href="/src/main/resources/templates/pages/login/home.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Home</a>
+            </li>
+            <li>
+            <a href="/src/main/resources/templates/pages/login/artist-page/artist.html" class="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600" aria-current="page">Artist</a>
+            </li>
+            <li>
+                <a href="/src/main/resources/templates/pages/login/premium.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Premium</a>
+            </li>
+            <li>
+                <a href="/src/main/resources/templates/pages/login/About-Creator.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">About The Creator</a>
+            </li>
+            <li>
+                <a href="/src/main/resources/templates/pages/login/create-artist-form/index.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Create BIography</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!-- NAVBAR ENDS -->
+
+
+    <!-- MAIN SECTION STARTED -->
+    <div class="flex flex-col max-w-screen-xl mx-auto text-gray-800">
+
+    <!-- MAIN SECTION STARTED -->
+    <div class="flex flex-col max-w-screen-xl mx-auto ">
+
+      <!-- BANNER AND SEARCH BAR SECTION STARTED -->
+      <section class="bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-800">
+          <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-10 lg:px-12">
+              <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48"
+                  style="font-family: 'Poppins', sans-serif;">
+                  Here are the list of the artist list. and please share to other peoples!</p>
+              <div class="4" style="font-family: 'Poppins', sans-serif;">
+                  <form class="max-w-md mx-auto">
+                      <label for="default-search"
+                          class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                      <div class="relative">
+                          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                              <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                  fill="none" viewBox="0 0 20 20">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                              </svg>
+                          </div>
+                          <input type="search" id="default-search"
+                              class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                              placeholder="Search Artist" required />
+                          <button type="submit"
+                              class="text-white absolute end-2.5 bottom-2.5 bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </section>
+      <!-- BANNER AND SEARCH BAR SECTION STARTED -->
+
+      <!-- FILTER SECTION STARTED -->
+      <div class="max-w-screen-xl p-3 mx-auto" id="myBtnContainer" style="font-family: 'Poppins', sans-serif;">
+          <ul
+              class="list-none  grid grid-cols-5 md:grid-cols-5 lg:grid-cols-5 grid-flow-row gap-4 items-center text-center">
+              <li data-filter="All"
+                  class="list active cursor-pointer focus:outline-none focus:ring-4 bg-gray-200 hover:bg-gray-300 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
+                  All</li>
+              <li data-filter="EnglishPop"
+                  class="list focus:outline-none cursor-pointer bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
+                  English POP</li>
+              <li data-filter="HipHop"
+                  class="list focus:outline-none bg-gray-200 cursor-pointer hover:bg-gray-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
+                  Hip-Hop</li>
+              <li data-filter="JapanPop"
+                  class="list focus:outline-none bg-gray-200 hover:bg-gray-300 focus:ring-4 cursor-pointer focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
+                  Japan POP</li>
+              <li data-filter="IndonesiaPOP"
+                  class="list focus:outline-none bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:ring-blue-300 cursor-pointer font-medium rounded-lg text-sm px-4 py-2">
+                  Indonesia POP</li>
+          </ul>
+      </div>
+      <!-- FILTER SECTION ENDED -->
+
+      <!-- RECIPE CARD SECTION STARTED -->
+      <div class="px-3 mx-auto py-3 text-gray-900 dark:text-white" style="font-family: 'Poppins', sans-serif;">
+          <div id="display-artist" class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          </div>
+      </div>
+      <!-- RECIPE CARD SECTION ENDED -->
+    </div>
+
+  <!-- FOOTER START -->
+  <div class="pt-20">
+      <footer class="bg-white rounded-lg m-4 dark:bg-gray-800">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#" class="hover:underline">Group 2 4SE1</a>. All Rights Reserved To The Creator.
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="/src/main/resources/templates/pages/login/About-Creator.html" class="hover:underline me-4 md:me-6">About The Creator</a>
+            </li>
+        </ul>
+        </div>
+      </footer>
+    </div>
+    <!-- FOOTER END -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="/src/main/resources/templates/bloatware.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/7c7f68c3e5.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="/src/main/resources/templates/bloatware.js"></script>
+
+  </body>
+  </html>

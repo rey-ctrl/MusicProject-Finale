@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicProject - Create Artist Biography</title>
+    <meta name="description"
+        content="Create our Artist biography" />
+    <script type="module" src="/src/main/resources/templates/bloatware.js"></script>
+    <link rel="stylesheet" href="/src/main/resources/templates/bloatware.css">
+    <script src="https://cdn.tailwindcss.com/config/defaultConfig.stub.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" href="/src/main/resources/templates/assets/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body>
+    <body class="bg-white dark:bg-gray-800">
+
+    <!-- NAVBAR STARTS  -->
+    <nav class="border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <div class="nav-text">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Music</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-500 text-blue-500 light:text-blue-500">Project</span>
+            </div>   
+        </a>
+        <a href="#" class="flex items-right"> 
+        <button data-collapse-toggle="navbar-hamburger" type="button" class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        
+        <div class="hidden w-full" id="navbar-hamburger">
+            <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+            <li>
+                <a href="/src/main/resources/templates/pages/login/home.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Home</a>
+            </li>
+            <li>
+            <a href="/src/main/resources/templates/pages/login/artist-page/artist.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Artist</a>
+        </li>
+            <li>
+                <a href="/src/main/resources/templates/pages/login/premium.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white">Premium</a>
+            </li>
+            <li>
+                <a href="/src/main/resources/templates/pages/login/About-Creator.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">About The Creator</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!-- NAVBAR ENDS -->
+
+
+    <!-- SUBMIT RECIPE SECTION STARTED -->
+    <div class="flex flex-col max-w-screen-xl p-3 mx-auto">
+        <div class="max-w-full flex flex-col justify-center items-center">
+
+                
+
+            <div class="max-w-full flex flex-col mt-10" style="font-family: 'Poppins', sans-serif;">
+                <div class="sm:col-span-2 my-4">
+                    <h1 class="text-4xl font-semibold mb-3 text-gray-900 dark:text-white">Artist Biography</h1>
+                    <label class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Title <span class="text-red-600">*</span></label>
+                    <input type="text" id="artist-title"
+                        class="form-create-artist bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="Type Artist name" required="">
+                </div>
+
+                <div class="flex flex-col sm:flex-row max-w-screen-sm gap-2 my-4">
+                    <div>
+                        <label class="block text-lg mb-2 font-semibold text-gray-900 dark:text-white">Category
+                            <span class="text-red-600">*</span></label>
+                        <select id="recipe-category" required
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <option selected="">Select category</option>
+                            <option value="EnglishPop">English POP</option>
+                            <option value="HipHop">Hip-Hop</option>
+                            <option value="JapanPop">Japan POP</option>
+                            <option value="IndonesiaPOP">Indonesia POP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label class="pt-5 block mb-2 text-lg font-semibold text-gray-900 dark:text-white">Artist Profile
+                    <span class="text-red-600">*</span></label>
+                <div class="mb-2 rounded-md mt-30 flex items-center justify-center w-full ">
+                    
+                    <label for="artist-image"
+                        class="flex flex-col items-center justify-center w-full h-64 border border-gray-300 rounded-md cursor-pointer bg-gray-50 hover:bg-gray-100">
+                        <div class="flex flex-col items-center justify-center pt-10 pb-6 ">
+                            <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                            </svg>
+                            <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to
+                                    upload</span> or drag and drop</p>
+                            <p class="text-xs text-gray-500">PNG, JPG or GIF (MAX 10MB)</p>
+                        </div>
+                        <input id="artist-image" type="file"
+                            class="font-light text-sm border border-gray-300 rounded-md"
+                            accept=".jpg, .jpeg, .png, .gif" required />
+                    </label>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label class="pt-5 block mb-2 text-lg font-semibold text-gray-900 dark:text-white">Description
+                        <span class="text-red-600">*</span></label>
+                    <div class="sm:col-span-2 p-3 my-5 bg-gray-50 border-gray-300 border rounded-md">
+                        <p class="text-sm font-light ">Please follow these guidelines when filling the description. Your biography may be rejected if your description does not meet the criteria.</p>
+                        <div class="do-section">
+                            <div class="flex flex-row gap-4 mt-4">
+                                <textarea id="artist-biography" rows="4" required=""
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="this artist is have godly talent in music."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                    <div class="mt-2">
+                        <div class="flex items-center my-22">
+                            <input id="link-checkbox" type="checkbox" value="" required
+                                class="w-4 h-4 dark:text-blue-500 text-blue-500 light:text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
+                            <label for="link-checkbox" class="ms-2 text-sm font-normal text-gray-900 dark:text-white">I agree with the <a href="#" class="text-blue-500 hover:underline">terms and conditions</a>.</label>
+                        </div>
+    
+                        <div class="sm:col-span-2 mt-6 flex justify-center">
+                            <button type="submit" id="create-artist-btn"
+                                class="text-white bg-green-700 hover:bg-green-800 hover:underline focus:ring-4 focus:outline-none focus:ring-green-600 font-medium rounded-md text-sm w-40 px-5 py-2.5 text-center">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUBMIT RECIPE SECTION ENDED -->
+
+    <br>
+    <br>
+
+    <!-- FOOTER SECTION STARTED -->
+<div class="pt-20">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#" class="hover:underline">Group 2 4SE1</a>. All Rights Reserved To The Creator.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="/src/main/resources/templates/pages/login/About-Creator.html" class="hover:underline me-4 md:me-6">About The Creator</a>
+        </li>
+    </ul>
+    </div>
+  </div>
+    <!-- FOOTER SECTION ENDED -->
+
+    <!-- IONICONS JAVASCRIPT STARTED -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- IONICONS JAVASCRIPT ENDED -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="/src/main/resources/templates/bloatware.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "musicproject",
+  "version": "1.0.0",
+  "description": "\"Hello World\" is a [Cloud Run](https://cloud.google.com/run/docs) application that renders a simple webpage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/main/resources/templates/input.css -o ./src/main/resources/templates/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  },
+  "dependencies": {
+    "codegpt-nextjs": "file:../../../../../../.vscode/extensions/danielsanmedium.dscodegpt-3.4.0/standalone",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "firebase": "^10.12.2",
+    "flowbite": "^2.3.0"
+  }
+}
